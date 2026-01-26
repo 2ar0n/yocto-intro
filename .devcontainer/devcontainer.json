@@ -1,0 +1,9 @@
+{
+  "name": "YoctoDev",
+  "build": { "dockerfile": "Dockerfile" },
+  "containerUser": "ubuntu",
+  "workspaceFolder": "/workspaces",
+  "containerEnv": {
+    "SHELL": "/bin/bash",
+  },
+}

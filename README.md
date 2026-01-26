@@ -4,13 +4,32 @@ Using LTS scarthgap
 https://docs.yoctoproject.org/5.0.15/ref-manual/system-requirements.html#supported-linux-distributions
 
 
-## Docker image
-https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/2823422188/Building+Yocto+Images+using+a+Docker+Container
-
-```sh
-sudo docker build -t yoctocontainer .
-sudo docker run -it -v `pwd`:/home/build/work yoctocontainer
+## Docker image clean-up
+```
+docker kill $(docker ps -q)
+docker rmi -f $(docker images -aq)
+docker container prune -f
+docker system df
 ```
 
-## Future
-Set up devcontainer as in https://github.com/exactassembly/yocto-vscode-howto
+```
+/workspaces/yocto-intro/sources/meta-raspberrypi \
+```
+
+```
+MACHINE ??= "raspberrypi3-64"
+DISTRO ?= "poky"
+PACKAGE_CLASSES ?= "package_ipk"
+SDKMACHINE ?= "x86_64"
+EXTRA_IMAGE_FEATURES ?= "debug-tweaks"
+PATCHRESOLVE = "noop"
+BB_DISKMON_DIRS = "\
+    STOPTASKS,${TMPDIR},1G,100K \
+    STOPTASKS,${DL_DIR},1G,100K \
+    STOPTASKS,${SSTATE_DIR},1G,100K \
+    STOPTASKS,/tmp,100M,100K \
+    ABORT,${TMPDIR},100M,1K \
+    ABORT,${DL_DIR},100M,1K \
+    ABORT,${SSTATE_DIR},100M,1K \
+    ABORT,/tmp,10M,1K"
+```
