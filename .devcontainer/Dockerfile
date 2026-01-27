@@ -1,4 +1,4 @@
-FROM ubuntu:25.10
+FROM ubuntu:24.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -23,10 +23,5 @@ RUN echo "dash dash/sh boolean false" | debconf-set-selections && dpkg-reconfigu
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && locale-gen
 ENV LANG=en_US.utf8
 
-# RUN groupadd build -g 1000
-# RUN useradd -ms /bin/bash -p build build -u 1000 -g 1000 && \
-#     usermod -aG sudo build && \
-#     echo "build:build" | chpasswd
 USER ubuntu
-
 WORKDIR /workspaces
