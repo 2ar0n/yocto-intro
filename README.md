@@ -13,11 +13,11 @@ docker system df
 ```
 
 ```
-/workspaces/yocto-intro/sources/meta-raspberrypi \
+  /workspaces/yocto-intro/meta-rp3_custom \
 ```
 
 ```
-MACHINE ??= "raspberrypi3-64"
+MACHINE ??= "raspberrypi3"
 DISTRO ?= "poky"
 PACKAGE_CLASSES ?= "package_ipk"
 SDKMACHINE ?= "x86_64"
@@ -32,4 +32,7 @@ BB_DISKMON_DIRS = "\
     ABORT,${DL_DIR},100M,1K \
     ABORT,${SSTATE_DIR},100M,1K \
     ABORT,/tmp,10M,1K"
+LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
 ```
+
+https://meta-raspberrypi.readthedocs.io/en/latest/ipcompliance.html#linux-firmware-rpidistro
