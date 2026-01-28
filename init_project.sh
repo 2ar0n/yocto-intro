@@ -1,4 +1,5 @@
 #!/bin/bash
+
 git submodule update --init
 mkdir -p build
 source sources/poky/oe-init-build-env build
@@ -28,4 +29,6 @@ BB_DISKMON_DIRS = "\
     ABORT,${SSTATE_DIR},100M,1K \
     ABORT,/tmp,10M,1K"
 LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
+EXTRA_IMAGE_FEATURES = "ssh-server-dropbear allow-empty-password empty-root-password allow-root-login"
+IMAGE_INSTALL += " net-tools"
 EOF
