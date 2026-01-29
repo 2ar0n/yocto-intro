@@ -24,7 +24,7 @@ if mount | grep /dev/mmcblk0; then
     sudo umount /dev/mmcblk0*
 fi
 
-cd build/tmp/deploy/images/raspberrypi3
+cp build/tmp/deploy/images/raspberrypi3/rpi-test-image-raspberrypi3.rootfs.wic.bz2 ./
 bunzip2 rpi-test-image-raspberrypi3.rootfs.wic.bz2
 sudo dd if=rpi-test-image-raspberrypi3.rootfs.wic of=/dev/mmcblk0 bs=4M status=progress
 sleep 5

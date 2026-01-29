@@ -13,7 +13,7 @@ bitbake-layers add-layer ../meta-rp3_custom
 TARGET_FILE="./conf/local.conf"
 # Write the configuration to the file
 cat > "$TARGET_FILE" << 'EOF'
-MACHINE ??= "raspberrypi3"
+MACHINE ??= "raspberrypi3-64"
 DISTRO ?= "poky"
 PACKAGE_CLASSES ?= "package_ipk"
 SDKMACHINE ?= "x86_64"
@@ -30,5 +30,5 @@ BB_DISKMON_DIRS = "\
     ABORT,/tmp,10M,1K"
 LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
 EXTRA_IMAGE_FEATURES = "ssh-server-dropbear allow-empty-password empty-root-password allow-root-login"
-IMAGE_INSTALL += " net-tools"
+IMAGE_INSTALL += "net-tools"
 EOF
