@@ -4,6 +4,6 @@
   "containerUser": "ubuntu",
   "workspaceFolder": "/workspaces",
   "containerEnv": {
-    "SHELL": "/bin/bash",
-  },
+    "SHELL": "/bin/bash"
+  }
 }
