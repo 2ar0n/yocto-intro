@@ -18,5 +18,5 @@ Build image with:
 ```sh
 source ./sources/openembedded-core/oe-init-build-env
 
-bitbake rpi-test-image
+bitbake core-image-minimal
 ```
