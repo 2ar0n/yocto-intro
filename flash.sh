@@ -7,7 +7,7 @@ if mount | grep /dev/mmcblk0; then
 fi
 
 machine_name="raspberrypi3-64"
-image_name="core-image-full-cmdline"
+image_name="core-image-minimal"
 
 cp build/tmp/deploy/images/${machine_name}/${image_name}-${machine_name}.rootfs.wic.bz2 ./
 bunzip2 ${image_name}-${machine_name}.rootfs.wic.bz2
