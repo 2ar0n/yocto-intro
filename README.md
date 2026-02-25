@@ -22,6 +22,6 @@ bitbake core-image-minimal
 ```
 
 # TODO:
-- [ ] Create Yocto distro which connects to network
+- [x] Create Yocto distro which connects to network
 - [ ] Update .dtb to include DAC on SPI bus
 - [ ] Write kernel driver for DAC
