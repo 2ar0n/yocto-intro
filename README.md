@@ -10,7 +10,7 @@ bitbake-layers add-layer ../sources/meta-raspberrypi
 bitbake-layers add-layer ../meta-rp3_custom
 ```
 
-And update the `conf/local.conf` file with the correct machine.
+And update the `conf/local.conf` file with the correct machine and distro name.
 
 ## Build
 
@@ -20,3 +20,8 @@ source ./sources/openembedded-core/oe-init-build-env
 
 bitbake core-image-minimal
 ```
+
+# TODO:
+- [ ] Create Yocto distro which connects to network
+- [ ] Update .dtb to include DAC on SPI bus
+- [ ] Write kernel driver for DAC
